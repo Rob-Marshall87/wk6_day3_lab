@@ -42,7 +42,7 @@ Cinema.prototype.checkMinLength = function(length){
   const filmsArray = films.filter( (movie) => {
     return movie.length < length;
   });
-  console.log(filmsArray);
+  // console.log(filmsArray);
   if (filmsArray.length === 0) {
     return true
   }else {
@@ -59,6 +59,15 @@ Cinema.prototype.totalRunningTime = function(){
     return total + sum;
   });
   return totalFilmTimes;
+};
+
+Cinema.prototype.filmsByProperty = function(property, value){
+  const films = this.films;
+  filmsArray = films.filter( (movie) => {
+    return movie[property] == value;
+  });
+  console.log(filmsArray);
+  return filmsArray;
 };
 
 module.exports = Cinema;
